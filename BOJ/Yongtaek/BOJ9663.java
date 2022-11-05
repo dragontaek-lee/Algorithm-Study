@@ -9,6 +9,22 @@ public class BOJ9663 {
     static int count;
     static boolean isDiag;
 
+    public static void chkDiag(int depth, int number){
+        for(int j = depth-1; j >= 0; j--){
+            if((cases[j] == (number - (depth-j))) || (cases[j] == (number + (depth-j)))){
+                isDiag = true;
+                break;
+            }
+        }
+    }
+
+    public static void execVisit(int depth, int number) throws IOException{
+        visited[number] = true;
+        cases[depth] = number;
+        backTracking(depth+1);
+        visited[number] = false;
+    }
+
     public static void backTracking(int depth) throws IOException{
         if(depth == N){
             count++;
@@ -18,27 +34,14 @@ public class BOJ9663 {
         for(int i = 1; i < N+1; i++){
             if(!visited[i]){
                 if(depth > 0){
-                    for(int j = depth-1; j >= 0; j--){
-                        if((cases[j] == (i - (depth-j))) || (cases[j] == (i + (depth-j)))){
-                            isDiag = true;
-                            break;
-                        }
-                    }
-
+                    chkDiag(depth, i);
                     if(isDiag) {
                         isDiag = false;
                     } else {
-                        visited[i] = true;
-                        cases[depth] = i;
-                        backTracking(depth+1);
-                        visited[i] = false;
+                        execVisit(depth,i);
                     }
-                    
                 } else {
-                    visited[i] = true;
-                    cases[depth] = i;
-                    backTracking(depth+1);
-                    visited[i] = false;
+                    execVisit(depth,i);
                 }
             }   
         }
