@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-public class BOJ7567 {
+public class BOJ7576 {
     static int[][] graph;
     static int m;
     static int n;
