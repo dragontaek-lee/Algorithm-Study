@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class BOJ9663 {
     public static int n;

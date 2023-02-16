@@ -13,5 +13,6 @@ public class BOJ2739 {
         }
 
         System.out.println(sb);
+        sc.close();
     }
 }
