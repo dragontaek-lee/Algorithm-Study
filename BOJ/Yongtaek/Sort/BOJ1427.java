@@ -1,25 +1,26 @@
 package Sort;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.Collections;
 
 public class BOJ1427 {
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        
-        ArrayList<Integer> list = new ArrayList<>();
+    public static void main(String args[]) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int temp = n;
-        while(temp > 0) {
-            list.add(temp % 10);
-            temp /= 10;
+        ArrayList<Integer> array = new ArrayList<>();
+
+        String num = br.readLine();
+
+        for(int i = 0; i < num.length(); i++) {
+            array.add(Character.getNumericValue(num.charAt(i)));
         }
 
-        list.sort(Comparator.reverseOrder());
+        Collections.sort(array, Collections.reverseOrder());
 
-        list.forEach(x-> System.out.print(x));
-
-        sc.close();
+        for(int i = 0; i < array.size(); i++) {
+            System.out.print(array.get(i));
+        }
     }
 }
