@@ -2,7 +2,7 @@ package Deque;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public class BOJ5430 {
@@ -16,7 +16,7 @@ public class BOJ5430 {
             String method = br.readLine();
             int length = Integer.parseInt(br.readLine());
             
-            ArrayDeque<Integer> array = new ArrayDeque<>();
+            LinkedList<Integer> array = new LinkedList<>();
             st = new StringTokenizer(br.readLine(), "[],");
             
             for(int k = 0; k < length; k++){
