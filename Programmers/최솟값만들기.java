@@ -4,6 +4,7 @@ import java.util.*;
 
 /*
  * https://school.programmers.co.kr/learn/courses/30/lessons/12941
+ * Primitive type은 reverse order가 제한됨
  */
 
 public class 최솟값만들기 {
