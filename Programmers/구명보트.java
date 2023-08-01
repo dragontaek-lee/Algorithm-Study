@@ -12,14 +12,14 @@ class 구명보트 {
         Arrays.sort(people);
         
         int lightestIdx = 0;
-        int heavestIdx = people.length - 1;
+        int heaviestIdx = people.length - 1;
         
-        while (lightestIdx <= heavestIdx) {
-            if (people[lightestIdx] + people[heavestIdx] > limit) {
-                heavestIdx--;
+        while (lightestIdx <= heaviestIdx) {
+            if (people[lightestIdx] + people[heaviestIdx] > limit) {
+                heaviestIdx--;
             } else {
                 lightestIdx++;
-                heavestIdx--;
+                heaviestIdx--;
             }
             answer++;
         }
